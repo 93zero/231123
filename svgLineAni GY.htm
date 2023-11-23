@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svgLineAnit</title>
+  
+        
+    <style>
+        body {
+            background: linear-gradient(137deg, #EC5680 0%, #F8D776 97.09%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .myPath {
+            fill:none;
+            stroke:#ffffff;
+            stroke-width:2;
+            /* 점선과 여백 */
+            stroke-dasharray:10 3; 
+            /* 속도 - 700(양수)-오른쪽, -700(음수)-왼쪽으로 돌아감*/
+            /* 수치가 낮을수록 느림  */
+            stroke-dashoffset:100;  
+         
+            animation: drawDash 4s forwards infinite; 
+            /* forwards - 애니메이션 마친 후 상태 유지 */
+            /* infinite - 무한반복  */
+         
+            /* 20px 선, 5 여백 */}
+        
+        @keyframes drawDash {
+            to{
+                stroke-dashoffset: 0;
+                /*대시옵센 0으로 설정하여 선이 그려지는 방식*/
+            }
+            
+        }
+
+        svg {
+            overflow: visible;
+            /*SVG 경계 외부의 내용 보이게 하기*/
+        }
+        rect{
+            /*700dms ,윤곽선 (stroke)의 대시 배열
+            
+            대시배열은 SVG에서 사용되는 
+            윤곽선을 지졍하는데 사용하는 용어
+            대시배열을 통해 실선,공백, 선 등을 번갈아가며 나타내는 선의 패턴
+            선의 패턴은,선이나 경로에 대한 그래픽 디자인 자체를 의미*/
+
+    stroke-dasharray:700;  /*픽셀- 실선의 길이*/      
+    /*700픽셀의 길이로 이루어진 패턴*/
+    stroke-dashoffset: 700;
+animation: draw 2s forwards;
+/*forwards -> 애니메이션이 완료된 후에 상태를 유지하도록 하는 옵션*/}
+    </style>
+
+</head>
+
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" width="122" height="117" viewBox="0 0 122 117" fill="none">
+      <path class="myPath"
+        d="M65.2798 3.78976L76.2404 37.5233C76.9768 39.7894 79.0885 41.3237 81.4713 41.3237H116.941C121.3 41.3237 123.113 46.902 119.586 49.4643L90.8904 70.3128C88.9627 71.7133 88.1561 74.1958 88.8924 76.462L99.8531 110.196C101.2 114.341 96.455 117.789 92.9283 115.227L64.2328 94.3782C62.3051 92.9777 59.6949 92.9777 57.7672 94.3782L29.0717 115.227C25.545 117.789 20.7998 114.341 22.1469 110.196L33.1076 76.462C33.8439 74.1958 33.0373 71.7133 31.1096 70.3128L2.41414 49.4643C-1.11257 46.902 0.699922 41.3237 5.05918 41.3237H40.5287C42.9115 41.3237 45.0232 39.7894 45.7595 37.5233L56.7202 3.78975C58.0673 -0.356142 63.9327 -0.356137 65.2798 3.78976Z" stroke="white"/>
+      </svg>
+
+</body>
+
+</html>
